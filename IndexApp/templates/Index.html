@@ -1,0 +1,185 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block Content %}
+    <style>
+
+      .container11 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+        margin-block: 2rem;
+        gap: 2rem;
+
+      }
+
+      img {
+        display: block;
+        object-fit: cover;
+        width: 350px;
+        height: 300px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: clamp(20rem, calc(20rem + 2vw), 22rem);
+        overflow: hidden;
+        box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 1em;
+        background: #ECE9E6;
+      background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+      }
+
+
+
+      .card__body {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+
+      .tag {
+        align-self: flex-start;
+        padding: .25em .75em;
+        border-radius: 1em;
+        font-size: .75rem;
+      }
+
+      .tag + .tag {
+        margin-left: .5em;
+      }
+
+      .tag-blue {
+        background: #56CCF2;
+      background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+        color: #fafafa;
+      }
+
+      .tag-brown {
+        background: #D1913C;
+      background: linear-gradient(to bottom, #FFD194, #D1913C);
+        color: #fafafa;
+      }
+
+      .tag-red {
+        background: #cb2d3e;
+      background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+        color: #fafafa;
+      }
+
+      .card__body h4 {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+
+
+
+      .user__info > small {
+        color: #666;
+      }
+      </style>
+
+
+
+  <body>
+
+
+
+
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+      <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h2>Be crunchy with pasmo crunches</h2>
+          </div>
+        </div>
+        <div class="banner-item-02">
+          <div class="text-content">
+            <h2>We promise you that our flavours can bring you that taste of Happiness</h2>
+          </div>
+        </div>
+        <div class="banner-item-03">
+          <div class="text-content">
+            <h2>
+              We bring a contemporary flavour to the traditional bakery
+              </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="latest-products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Items</h2>
+
+              <div class="container11">
+                                  {% for dests in dest1  %}
+
+                <div class="card">
+                  <div class="card__header">
+                    <img src="{{dests.img.url}}" alt="card__image" class="card__image" width="600">
+                  </div>
+                  <div class="card__body">
+                    <h4 style="color:red">{{ dests.name}}</h4>
+                    <p>{{ dests.desc }}</p>
+                  </div>
+                </div>
+                                  {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="best-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>About Pasmo Bakery</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>Looking for the best products?</h4>
+              <ul class="featured-list">
+                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                <li><a href="#">Consectetur an adipisicing elit</a></li>
+                <li><a href="#">It aquecorporis nulla aspernatur</a></li>
+                <li><a href="#">Corporis, omnis doloremque</a></li>
+                <li><a href="#">Non cum id reprehenderit</a></li>
+              </ul>
+              <a href="{% url 'About' %}" class="filled-button">Read More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="{% static 'assets/images/IMG-20211028-WA0010.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+{% endblock %}
