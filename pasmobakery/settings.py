@@ -78,15 +78,17 @@ WSGI_APPLICATION = 'pasmobakery.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
 
-        'NAME': 'pasmobakery',
+        'NAME': 'pasmobakerymalappuram',
 
-        'USER': 'postgres',
+        'USER': 'root',
 
-        'PASSWORD': '12345',
+        'PASSWORD': '',
 
         'HOST': 'localhost',
+
+        'PORT': '3306',
 
     }
 }
